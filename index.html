@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>丹东江城电机厂 - 官方网站</title>
+    <style>
+        /* =========================================
+           1. 基础设置与色彩系统 (Global Variables)
+           在此处修改全站的主题颜色
+        ========================================= */
+        :root {
+            --primary-color: #004080; /* 主色调：工业深蓝 (控制Logo、标题等) */
+            --accent-color: #e63946;  /* 强调色：动力红 (控制按钮、下划线等) */
+            --text-dark: #333;        /* 正文深色 */
+            --text-light: #666;       /* 次要文本浅色 */
+            --bg-light: #f4f7f6;      /* 浅灰色背景，用于区块区分 */
+            --content-width: 1200px;  /* 网页版心宽度，如果觉得页面太窄可改大(如1400px) */
+        }
+        
+        body {
+            font-family: "Microsoft YaHei", "Helvetica Neue", sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; padding: 0; }
+
+        /* =========================================
+           2. 顶部导航栏 (Header)
+        ========================================= */
+        header {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* 底部阴影 */
+            position: fixed; /* 固定在顶部 */
+            width: 100%;
+            top: 0;
+            z-index: 1000; /* 确保层级最高，不被挡住 */
+        }
+        
+        .nav-container {
+            width: 100%; /* 解除宽度限制，强行撑满整个屏幕宽度 */
+            box-sizing: border-box; /* 防止加了内边距后撑破屏幕 */
+            display: flex;  
+            justify-content: space-between; /* 让 Logo在最左，菜单在最右 */
+            align-items: center; 
+            padding: 0 40px; /* 左右各留 40px 的安全距离 */
+            height: 80px; 
+        }
+
+        .logo { font-size: 24px; font-weight: bold; color: var(--primary-color); display: flex; align-items: center; }
+        .logo span { font-size: 14px; color: #666; margin-left: 10px; font-weight: normal; }
+
+        .nav-links { display: flex; gap: 70px; /* 菜单项之间的间距 */ }
+        .nav-links a { font-weight: 500; transition: color 0.3s; padding: 10px 15px; }
+        .nav-links a:hover { color: var(--primary-color); border-bottom: 2px solid var(--accent-color); } 
+
+        .btn-contact {
+            background: var(--primary-color);
+            color: #fff;
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-size: 14px;
+            transition: opacity 0.3s;
+        }
+        .btn-contact:hover { opacity: 0.8; }
+
+        /* 移动端菜单按钮 (默认隐藏，仅在手机端显示) */
+        .menu-toggle { display: none; font-size: 24px; cursor: pointer; color: var(--primary-color); }
+
+        /* =========================================
+           3. 首屏海报区域 (Hero Section)
+        ========================================= */
+        .hero {
+            /* 替换背景图路径：将 '背景图1.png' 换成您的高清大图 */
+            background: linear-gradient(rgba(0, 64, 128, 0.7), rgba(0, 64, 128, 0.7)), url('背景图1.png'); 
+            background-size: cover; /* 背景图铺满 */
+            background-position: center;
+            height: 600px; /* 首屏高度 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            margin-top: 80px; /* 留出顶部导航栏的空间 */
+        }
+
+        .hero-content h1 { font-size: 48px; margin-bottom: 20px; }
+        .hero-content p { font-size: 20px; margin-bottom: 40px; opacity: 0.9; }
+
+        .hero-btn {
+            background: var(--accent-color);
+            color: #fff;
+            padding: 15px 40px;
+            font-size: 18px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .hero-btn:hover { background: #d32f2f; }
+
+        /* =========================================
+           4. 公共区块标题样式 (Section Title)
+        ========================================= */
+        .section-title {
+            font-size: 32px;
+            color: var(--primary-color);
+            margin-bottom: 50px;
+            position: relative;
+            display: inline-block;
+        }
+        /* 标题下方的红线装饰 */
+        .section-title::after {
+            content: ''; display: block; width: 60px; height: 3px;
+            background: var(--accent-color); margin: 10px auto 0;
+        }
+
+        /* =========================================
+           6. 产品展示区域 (Products)
+        ========================================= */
+        .products { padding: 80px 20px; background: var(--bg-light); }
+
+        .product-grid {
+            display: grid;
+            /* 产品卡片比优势卡片稍窄一点，最小280px */
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: var(--content-width);
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden; /* 防止图片超出圆角 */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        .product-card:hover { transform: translateY(-5px); }
+
+        .product-img-box { height: 240px; background: #ddd; }
+        .product-img-box img { width: 100%; height: 100%; object-fit: cover; /* 保证图片不变形铺满 */ }
+
+        .product-info { padding: 20px; }
+        .product-info h3 { margin: 0 0 10px; color: var(--primary-color); font-size: 18px; }
+        .product-info p { font-size: 14px; color: var(--text-light); margin-bottom: 15px; }
+        .view-btn { color: var(--accent-color); font-weight: bold; font-size: 14px; }
+
+        /* =========================================
+           7. 关于我们 (About)
+        ========================================= */
+        .about {
+            padding: 80px 20px;
+            max-width: var(--content-width);
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap; /* 空间不够时允许图文上下折行 */
+        }
+        
+        .about-text { flex: 1; min-width: 300px; } /* 文字区自适应宽度 */
+        .about-image { 
+            flex: 1; min-width: 300px; height: 400px; 
+            border-radius: 8px; 
+            /* 替换为您工厂的实景图 */
+            background-image: url('图2.png');
+            background-color: #eee; /* 图片加载失败时的底色 */
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* =========================================
+           8. 底部区域 (Footer)
+        ========================================= */
+        footer { background: #1a1a1a; color: #fff; padding: 60px 20px 20px; }
+
+        .footer-content {
+            max-width: var(--content-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 { color: #fff; margin-bottom: 20px; font-size: 18px; }
+        .footer-col p, .footer-col a { color: #aaa; font-size: 14px; line-height: 2; display: block; margin: 0;}
+        .footer-col a:hover { color: #fff; } /* 底部链接悬停变白 */
+
+        .footer-bottom {
+            text-align: center; border-top: 1px solid #333; padding-top: 20px;
+            color: #666; font-size: 12px;
+        }
+
+        /* =========================================
+           9. 手机端适配 (Media Queries)
+        ========================================= */
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 32px; } /* 手机端标题改小 */
+            .hero { height: 400px; } /* 手机端首屏变矮 */
+            
+            /* 手机端导航菜单处理 */
+            .menu-toggle { display: block; } /* 显示汉堡菜单图标 */
+            .btn-contact { display: none; } /* 隐藏顶部电话按钮，节省空间 */
+            
+            .nav-links {
+                display: none; /* 默认隐藏导航链接 */
+                flex-direction: column; /* 改为垂直排列 */
+                position: absolute; /* 绝对定位，脱离正常文档流 */
+                top: 80px; left: 0; width: 100%;
+                background: #fff;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+                padding: 20px 0;
+                text-align: center;
+            }
+            .nav-links.active { display: flex; } /* 通过JS添加active类来显示菜单 */
+        }
+
+        /* =========================================
+           10. 右下角悬浮二维码 (Floating QR Code)
+        ========================================= */
+        .floating-qr {
+            position: fixed; 
+            bottom: 30px; 
+            right: 30px;  
+            background: #fff;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            text-align: center;
+            z-index: 1000; 
+            transition: transform 0.3s;
+        }
+        .floating-qr:hover { transform: translateY(-5px); }
+        .floating-qr img { width: 100px; height: 100px; display: block; }
+        .floating-qr p { margin: 8px 0 0 0; font-size: 12px; color: var(--primary-color); font-weight: bold; }
+
+        @media (max-width: 768px) {
+            .floating-qr { display: none; }
+        }
+
+        /* =========================================
+           11. 自动滚动展示区 (Auto-Scrolling Gallery)
+        ========================================= */
+        .auto-scroll-section {
+            padding: 80px 60px;
+            background: #fff;
+            text-align: center;
+        }
+
+        .scroll-container {
+            max-width: var(--content-width);
+            margin: 0 auto;
+            overflow: hidden; 
+            position: relative;
+        }
+
+        .scroll-container::before,
+        .scroll-container::after {
+            content: ''; position: absolute; top: 0; width: 80px; height: 100%; z-index: 2; pointer-events: none;
+        }
+        .scroll-container::before { left: 0; background: linear-gradient(to right, #fff, transparent); }
+        .scroll-container::after { right: 0; background: linear-gradient(to left, #fff, transparent); }
+
+        .scroll-track {
+            display: flex;
+            width: max-content; 
+            animation: infiniteScroll 20s linear infinite; 
+        }
+
+        .scroll-track:hover { animation-play-state: paused; }
+
+        .scroll-group {
+            display: flex;
+            gap: 30px; 
+            padding-right: 30px; 
+        }
+
+        .scroll-item {
+            width: 340px; 
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 25px; 
+            box-sizing: border-box;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        
+        .scroll-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+            border-color: var(--primary-color);
+        }
+
+        .scroll-item img {
+            width: 100%;
+            height: 240px; 
+            object-fit: contain; 
+            margin-bottom: 20px;
+        }
+
+        .scroll-item p {
+            margin: 0; font-size: 18px; font-weight: bold; color: var(--primary-color);
+        }
+
+        @keyframes infiniteScroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); } 
+        }
+
+        @media (max-width: 768px) {
+            .scroll-item { width: 220px; padding: 15px; }
+            .scroll-item img { height: 140px; }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="floating-qr">
+        <img src="二维码.jpg" alt="联系微信">
+        <p>扫码加微信</p>
+    </div>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <img src="logo.png" alt="江城电机Logo" style="height: 40px; margin-right: 15px;">
+                江城电机 <span>JIANGCHENG MOTOR</span>
+            </a>
+            
+            <nav class="nav-links" id="nav-links">
+                <a href="#">首页</a>
+                <a href="#products">产品中心</a>
+                <a href="#about">关于我们</a>
+                <a href="#contact">联系我们</a>
+            </nav>
+            <a href="#contact" class="btn-contact">拨打电话</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>精密驱动 智造未来</h1>
+            <p>专注于 TYCVF 变频调速永磁同步电机与高效节能解决方案</p>
+            <a href="#products" class="hero-btn">查看产品系列</a>
+        </div>
+    </section>
+
+    <section class="auto-scroll-section">
+        <h2 class="section-title">产品展示</h2>
+        
+        <div class="scroll-container">
+            <div class="scroll-track">
+                <div class="scroll-group">
+                    <div class="scroll-item">
+                        <img src="强制风冷.webp" alt="TYCVF系列">
+                        <p>TYCVF 永磁同步电机</p>
+                    </div>
+                    <div class="scroll-item">
+                        <img src="YE3-B35立卧两用.webp" alt="YE3系列">
+                        <p>YE3 超高效率电机</p>
+                    </div>
+                    <div class="scroll-item">
+                        <img src="YE4系列三相异步电动机.png" alt="YE4系列">
+                        <p>YE4 国标2级能效</p>
+                    </div>
+                    <div class="scroll-item">
+                        <img src="YE5系列三相异步电动机.png" alt="YE5系列">
+                        <p>YE5 巅峰1级能效</p>
+                    </div>
+                    <div class="scroll-item">
+                        <img src="变频控制柜2.jpg" alt="智能变频柜">
+                        <p>智能成套变频柜</p>
+                    </div>
+                </div>
+
+                <div class="scroll-group">
+                    <div class="scroll-item">
+                        <img src="强制风冷.webp" alt="TYCVF系列">
+                        <p>TYCVF 永磁同步电机</p>
+                    </div>
+                    <div class="scroll-item">
+                        <img src="YE3-B35立卧两用.webp" alt="YE3系列">
+                        <p>YE3 超高效率电机</p>
+                    </div>
+                    <div class="scroll-item">
+                        <img src="YE4系列三相异步电动机.png" alt="YE4系列">
+                        <p>YE4 国标2级能效</p>
+                    </div>
+                    <div class="scroll-item">
+                        <img src="YE5系列三相异步电动机.jpg" alt="YE5系列">
+                        <p>YE5 巅峰1级能效</p>
+                    </div>
+                    <div class="scroll-item">
+                        <img src="变频控制柜2.jpg" alt="智能变频柜">
+                        <p>智能成套变频柜</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="products" class="products">
+        <div style="text-align: center;">
+            <h2 class="section-title">核心产品系列</h2>
+        </div>
+        <div class="product-grid">
+            
+            <div class="product-card">
+                <div class="product-img-box">
+                    <img src="强制风冷.webp" alt="TYCVF永磁同步电机">
+                </div>
+                <div class="product-info">
+                    <h3>TYCVF 永磁同步电机（标准系列）</h3>
+                    <p>标准系列。适用于:需要节能连续运行的一般使用场所。如风机、水泵、机床、油田磕头机、化工、电力、压缩机、注塑机、粉碎机、矿山、钢铁等，可简单方便地替代标准YE3/YE4系列超高效异步电动机。</p>
+                    <a href="1-TYCVF系列超高效变频调速三相永磁同步电动机.html" class="view-btn" target="_blank">查看详情 ></a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img-box">
+                    <img src="强制风冷.webp" alt="TYCVF永磁同步电机">
+                </div>
+                <div class="product-info">
+                    <h3>TYCVF 永磁同步电机（低速大转矩系列）</h3>
+                    <p>低速大转矩系列。该系列产品是一种直驱式电动机，额定电压为380V，由变频器供电，能够直接满足负载转速和转矩的要求，将省去传动系统中的减速箱及缓冲机构等环节，从根本上克服感应电动机加齿轮减速机传动系统存在的各种弊端，具有传动效率高、起动转矩性能好、节能、噪音低、振动小、温升低、运行安全可靠、安装维护费用低等优点。根据用户需要，可以提供其它电压等级的产品。</p>
+                    <a href="2-TYCVF系列超高效变频调速三相永磁同步电动机（低速大转矩系列）.html" class="view-btn" target="_blank">查看详情 ></a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img-box">
+                    <img src="TYCVF系列.webp" alt="YE3超高效电机">
+                </div>
+                <div class="product-info">
+                    <h3>YE3 超高效率异步电机</h3>
+                    <p>适用于:需要节能连续运行的一般使用场所。如风机、水泵、机床、油田、化工、矿山、钢铁等，其外形美观、高效节能，F级绝缘，防护等级为IP54/55，电机噪声低、振动小，运行可靠。</p>
+                    <a href="YE3 系列超高效率电动机.html" class="view-btn" target="_blank">查看详情 ></a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img-box">
+                    <img src="YE4系列三相异步电动机.png" alt="YE4变频电机">
+                </div>
+                <div class="product-info">
+                    <h3>YE4系列三相异步电动机</h3>
+                    <p>YE4系列电机的安装尺寸符合IEC60034标准。具有结构合理，外形美观，效率高，噪音低，防护等级、绝缘等级高等优点，可广泛应用于风机、水泵、机床、压缩机和运输机械等驱动各种通用机械设备，也可在石油、化工、钢铁、矿山等其它环境比较恶劣的场所使用。</p>
+                    <a href="YE4系列三相异步电动机.html" class="view-btn" target="_blank">查看详情 ></a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img-box">
+                    <img src="YE5系列三相异步电动机.png" alt="YE5系列">
+                </div>
+                <div class="product-info">
+                    <h3>YE5系列三相异步电动机</h3>
+                    <p>YE5系列电机的安装尺寸符合IEC 60034标准。具有结构合理，外形美观，效率高，噪音低，防护等级、绝缘等级高、长寿、长可靠等优点，可广泛应用于风机、水泵、机床、压缩机和运输机械等驱动各种通用机械设备。</p>
+                    <a href="YE5.html" class="view-btn" target="_blank">查看详情 ></a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img-box">
+                    <img src="19-YBX3系列高效率隔爆型三相异步电动机2.jpg" alt="其他电机">
+                </div>
+                <div class="product-info">
+                    <h3>其他系列</h3>
+                    <p>除了主打的TYCVF 变频调速永磁同步电机与YE3、YE4等异步电机，本公司还拥有极为丰富的产品种类，如：YVF2、YEIVF系列变频调速专用三相异步电动机、YD2系列变极多速三相异步电动机、YDT系列风机水泵专用变极多速三相异步电动机、YE2、YDE2系列电磁制动三相异步电动机等全面满足各类严苛工况需求。</p>
+                    <a href="其他系列.html" class="view-btn" target="_blank">查看详情 ></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="about" class="about">
+        <div class="about-image"></div>
+        <div class="about-text">
+            <h2 class="section-title" style="text-align: left;">关于丹东江城电机</h2>
+            <p>丹东江城电机厂坐落于辽宁省鸭绿江口、黄海岸边的前阳经济技术开发区境内，与朝鲜隔江相望，丹东江城电机厂是于2000年成立的一家集现代生产规模的电机制造、机械加工于一身的综合性企业。我公司致力于各式工业用电机的研发、生产与销售，主要生产YE2、YX3、YE3、YD2、YDT、YE12.YDEI2、YCT、YVF2、YEIVF等系列电机。</p>
+            <br>
+            
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>联系方式</h4>
+                <p>电话: 0415-7155557 / 13664168266（微信同步）</p>
+                <p>传真: 0415-7162967</p>
+                <p>邮箱: 13664168266@163.com</p>
+            </div>
+            <div class="footer-col">
+                <h4>公司地址</h4>
+                <p>辽宁省丹东市东港市前阳镇柳林车站东行300米</p>
+                <p>邮编: 118301</p>
+            </div>
+            <div class="footer-col">
+                <h4>快速链接</h4>
+                <a href="丹东江城电机厂产品图册.pdf" download>产品图册下载</a>
+                <a href="#">技术支持</a>
+                <a href="#">企业资质</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 丹东江城电机厂 版权所有 | 辽ICP备xxxxxxxx号</p>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu');
+        const navLinks = document.getElementById('nav-links');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>

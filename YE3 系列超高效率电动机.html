@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YE3 系列超高效率电动机- 江城电机</title>
+    <style>
+        :root {
+            --primary-color: #004080; 
+            --accent-color: #e63946;  
+            --text-dark: #333;
+            --text-light: #666;
+            --content-width: 1200px;
+        }
+        body { font-family: "Microsoft YaHei", sans-serif; margin: 0; padding-top: 40px; background: #f4f7f6; color: var(--text-dark); }
+        
+        /* 页面大标题 */
+        .page-header { max-width: var(--content-width); margin: 0 auto 30px; text-align: center; }
+        .page-header h1 { color: var(--primary-color); font-size: 32px; margin-bottom: 10px; }
+        .page-header p { color: var(--text-light); font-size: 16px; }
+
+        /* =========================================
+           同系列多型号：横向滚动展示区
+        ========================================= */
+        .variant-carousel {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            overflow-x: auto;
+            padding: 10px 20px 40px; /* 留出底部阴影空间 */
+            max-width: var(--content-width);
+            margin: 0 auto 40px;
+            scroll-snap-type: x mandatory; 
+            scroll-behavior: smooth;
+            scrollbar-width: thin; /* 定制滚动条 */
+        }
+        .variant-carousel::-webkit-scrollbar { height: 8px; }
+        .variant-carousel::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; }
+
+        .variant-card {
+            flex: 0 0 300px; /* 每张卡片宽度固定 300px */
+            scroll-snap-align: start;
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            text-align: center;
+            border: 1px solid #eee;
+        }
+
+        .img-box { height: 220px; padding: 20px; background: #fff; display: flex; align-items: center; justify-content: center; border-bottom: 1px solid #f0f0f0; }
+        /* 这里保证电机图片完整显示且不变形 */
+        .img-box img { max-width: 100%; max-height: 100%; object-fit: contain; } 
+
+        .info-box { padding: 15px; }
+        .info-box h3 { margin: 0; font-size: 16px; color: var(--primary-color); }
+
+        /* =========================================
+           下方统一参数说明区
+        ========================================= */
+        .content-section {
+            max-width: var(--content-width);
+            margin: 0 auto 60px;
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .section-title { font-size: 22px; border-bottom: 2px solid var(--accent-color); padding-bottom: 10px; display: inline-block; margin-bottom: 20px;}
+    </style>
+</head>
+<body>
+
+    <div class="page-header">
+        <h1>YE3系列三相异步电动机</h1>
+        
+    </div>
+
+    <div class="variant-carousel">
+        <div class="variant-card">
+            <div class="img-box"><img src="YE3-B5立式.webp" alt="YE3-B5立式"></div>
+            <div class="info-box">
+                <h3>YE3-B5立式</h3>
+            </div>
+        </div>
+
+        <div class="variant-card">
+            <div class="img-box"><img src="YE3-B3卧式.jpg" alt="YE3-B3卧式"></div>
+            <div class="info-box">
+                <h3>YE3-B3卧式</h3>
+            </div>
+        </div>
+
+        <div class="variant-card">
+            <div class="img-box"><img src="YE3-B35立卧两用.webp" alt="YE3-B35立卧两用"></div>
+            <div class="info-box">
+                <h3>YE3-B35立卧两用</h3>
+            </div>
+        </div>
+        
+    </div>
+    <div class="content-section">
+        
+        <h2 class="section-title">核心优势：国标认证，高效节能首选</h2>
+        <div style="margin-bottom: 40px; line-height: 1.8; color: var(--text-light);">
+            <p>YE3 系列超高效率三相异步电动机，是国家全面推广的新一代节能型通用产品。其采用冷轧硅钢片和优质漆包线精心制造，为您企业的长效运行大幅降低电费成本：</p>
+            <ul style="padding-left: 20px;">
+                <li><strong style="color: var(--primary-color);">符合国家能效标准：</strong> 效率指标全面达到 GB18613《中小型三相异步电动机能效限定值及能效等级》中的 2 级能效（相当于国际 IEC60034-30 的 IE3 标准）。</li>
+                <li><strong style="color: var(--primary-color);">低成本原位替换：</strong> 机座号、安装尺寸及功率等级与老旧的 Y、Y2、YE2 系列完全一致。无需任何机械改造，直接拆旧换新，升级门槛极低。</li>
+                <li><strong style="color: var(--primary-color);">温升低，寿命长：</strong> 采用 F 级绝缘结构，温升按 B 级考核。在满载运行下发热更少，大大延长了绝缘老化时间及轴承使用寿命。</li>
+                <li><strong style="color: var(--primary-color);">广泛的工业适用性：</strong> 防护等级高达 IP55，无惧灰尘与水花。是机床、风机、水泵、空压机、减速机等各类连续运行通用机械的理想动力源。</li>
+            </ul>
+        </div>
+
+        <h2 class="section-title">YE3 系列超高效率电动机主要技术参数</h2>
+        <p style="font-size: 14px; color: #888; margin-bottom: 15px;">* 以下为部分 2极 (同步转速 3000 r/min) 核心型号参数展示。更多级数及完整数据请在下方下载产品样本。</p>
+        
+        <div style="overflow-x: auto;">
+            <table style="width: 100%; min-width: 800px; border-collapse: collapse; margin-bottom: 40px; text-align: center; font-size: 14px;">
+                <thead>
+                    <tr style="background-color: var(--primary-color); color: #fff;">
+                        <th style="padding: 12px; border: 1px solid #ddd; white-space: nowrap;">型号<br>(Type)</th>
+                        <th style="padding: 12px; border: 1px solid #ddd;">额定功率<br>(kW)</th>
+                        <th style="padding: 12px; border: 1px solid #ddd;">满载转速<br>(r/min)</th>
+                        <th style="padding: 12px; border: 1px solid #ddd;">额定电流<br>(A)</th>
+                        <th style="padding: 12px; border: 1px solid #ddd;">额定转矩<br>(N·m)</th>
+                        <th style="padding: 12px; border: 1px solid #ddd; color: #ffeb3b; font-size: 15px;">效率<br>(Eff. %)</th>
+                        <th style="padding: 12px; border: 1px solid #ddd;">功率因数<br>(COSΦ)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="background-color: #f9f9f9;">
+                        <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">YE3-80M1-2</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">0.75</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">2870</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">1.7</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">2.5</td>
+                        <td style="padding: 10px; border: 1px solid #ddd; color: var(--accent-color); font-weight: bold;">80.7</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">0.82</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">YE3-112M-2</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">4</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">2915</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">7.8</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">13.1</td>
+                        <td style="padding: 10px; border: 1px solid #ddd; color: var(--accent-color); font-weight: bold;">88.1</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">0.88</td>
+                    </tr>
+                    <tr style="background-color: #f9f9f9;">
+                        <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">YE3-160M1-2</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">11</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">2950</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">20.6</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">35.6</td>
+                        <td style="padding: 10px; border: 1px solid #ddd; color: var(--accent-color); font-weight: bold;">91.2</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">0.89</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">YE3-200L1-2</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">30</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">2965</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">54.9</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">96.6</td>
+                        <td style="padding: 10px; border: 1px solid #ddd; color: var(--accent-color); font-weight: bold;">93.3</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">0.89</td>
+                    </tr>
+                    <tr style="background-color: #f9f9f9;">
+                        <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">YE3-250M-2</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">55</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">2975</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">98.5</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">177.0</td>
+                        <td style="padding: 10px; border: 1px solid #ddd; color: var(--accent-color); font-weight: bold;">94.3</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">0.90</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">YE3-315S-2</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">110</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">2985</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">195.0</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">352.0</td>
+                        <td style="padding: 10px; border: 1px solid #ddd; color: var(--accent-color); font-weight: bold;">95.2</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">0.90</td>
+                    </tr>
+                    <tr style="background-color: #f9f9f9;">
+                        <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">YE3-315L2-2</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">200</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">2985</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">349.0</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">640.0</td>
+                        <td style="padding: 10px; border: 1px solid #ddd; color: var(--accent-color); font-weight: bold;">95.8</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">0.91</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2 class="section-title">外形尺寸与完整图册下载</h2>
+        <div style="background: #f4f7f6; padding: 30px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #eee; margin-bottom: 40px;">
+            <div>
+                <h3 style="margin-top: 0; color: var(--primary-color);">需要完整极数型号或详细的外形安装尺寸？</h3>
+                <p style="color: var(--text-light); margin-bottom: 0;">由于型号众多，网页仅展示部分参数。完整安装数据（机座号、孔距、轴径）请下载 Excel 数据包。</p>
+            </div>
+            <div style="display: flex; gap: 15px;">
+                <a href="4-YE3系列超高效率三相异步电动机产品样本数据.xlsx" download style="background: #fff; border: 1px solid var(--primary-color); color: var(--primary-color); padding: 10px 20px; border-radius: 4px; font-weight: bold; transition: 0.3s; text-decoration: none;">下载产品样本数据 (Excel)</a>
+            </div>
+        </div>
+
+        <h2 class="section-title">外形尺寸与图册下载</h2>
+        <div style="background: #f4f7f6; padding: 30px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #eee;">
+            <div>
+                <h3 style="margin-top: 0; color: var(--primary-color);">完整极数型号或详细的外形安装尺寸</h3>
+                <p style="color: var(--text-light); margin-bottom: 0;">我们为您准备了完整的 PDF 参考图册与详细的技术安装尺寸数据表。</p>
+            </div>
+            <div style="display: flex; gap: 15px;">
+                <a href="参考图册.pdf" target="_blank" style="background: var(--accent-color); color: #fff; padding: 10px 20px; border-radius: 4px; font-weight: bold; transition: 0.3s; text-decoration: none;">下载参考图册 (PDF)</a>
+                
+            </div>
+        </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

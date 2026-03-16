@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YE3 系列超高效率电动机- 江城电机</title>
+    <style>
+        :root {
+            --primary-color: #004080; 
+            --accent-color: #e63946;  
+            --text-dark: #333;
+            --text-light: #666;
+            --content-width: 1200px;
+        }
+        body { font-family: "Microsoft YaHei", sans-serif; margin: 0; padding-top: 40px; background: #f4f7f6; color: var(--text-dark); }
+        
+        /* 页面大标题 */
+        .page-header { max-width: var(--content-width); margin: 0 auto 30px; text-align: center; }
+        .page-header h1 { color: var(--primary-color); font-size: 32px; margin-bottom: 10px; }
+        .page-header p { color: var(--text-light); font-size: 16px; }
+
+        /* =========================================
+           同系列多型号：横向滚动展示区
+        ========================================= */
+        .variant-carousel {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            overflow-x: auto;
+            padding: 10px 20px 40px; /* 留出底部阴影空间 */
+            max-width: var(--content-width);
+            margin: 0 auto 40px;
+            scroll-snap-type: x mandatory; 
+            scroll-behavior: smooth;
+            scrollbar-width: thin; /* 定制滚动条 */
+        }
+        .variant-carousel::-webkit-scrollbar { height: 8px; }
+        .variant-carousel::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; }
+
+        .variant-card {
+            flex: 0 0 300px; /* 每张卡片宽度固定 300px */
+            scroll-snap-align: start;
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            text-align: center;
+            border: 1px solid #eee;
+        }
+
+        .img-box { height: 220px; padding: 20px; background: #fff; display: flex; align-items: center; justify-content: center; border-bottom: 1px solid #f0f0f0; }
+        /* 这里保证电机图片完整显示且不变形 */
+        .img-box img { max-width: 100%; max-height: 100%; object-fit: contain; } 
+
+        .info-box { padding: 15px; }
+        .info-box h3 { margin: 0; font-size: 16px; color: var(--primary-color); }
+    </style>
+</head>
+<body>
+
+    <div class="page-header">
+        <h1>YVF2,YEJVF，YVP2系列变频调速专用三相异步电动机</h1>
+    </div>
+
+    <div class="variant-carousel">
+        <div class="variant-card">
+            <div class="img-box"><img src="5-1.jpg" alt=""></div>
+            <div class="info-box">
+                <h3>YVF2,YEJVF，YVP2系列</h3>
+            </div>
+        </div>
+
+        <div class="variant-card">
+            <div class="img-box"><img src="5-YVF2,YEJVF,YVP2系列变频调速专用三相异步电动机2.jpg" alt=""></div>
+            <div class="info-box">
+                <h3>YVF2,YEJVF，YVP2系列</h3>
+            </div>
+        </div>
+
+        <div class="variant-card">
+            <div class="img-box"><img src="5-YVF2,YEJVF，YVP2系列变频调速专用三相异步电动机3.jpg" alt=""></div>
+            <div class="info-box">
+                <h3>YVF2,YEJVF，YVP2系列</h3>
+            </div>
+        </div>
+
+        <div class="variant-card">
+            <div class="img-box"><img src="5-YVF2,YEJVF，YVP2系列变频调速专用三相异步电动机4.jpg" alt=""></div>
+            <div class="info-box">
+                <h3>YVF2,YEJVF，YVP2系列</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-header">
+        <h1>YEJ2，YDEJ2系列电磁制动三相异步电动机</h1>
+    </div>
+
+    <div class="variant-carousel">
+        <div class="variant-card">
+            <div class="img-box"><img src="8-YEJ2，YDEJ2系列电磁制动三相异步电动机1.jpg" alt=""></div>
+            <div class="info-box">
+                <h3>YEJ2，YDEJ2系列</h3>
+            </div>
+        </div>
+
+        <div class="variant-card">
+            <div class="img-box"><img src="8-YEJ2，YDEJ2系列电磁制动三相异步电动机2.jpg" alt=""></div>
+            <div class="info-box">
+                <h3>YEJ2，YDEJ2系列</h3>
+            </div>
+        </div>
+
+        <div class="variant-card">
+            <div class="img-box"><img src="8-YEJ2，YDEJ2系列电磁制动三相异步电动机3.jpg" alt=""></div>
+            <div class="info-box">
+                <h3>YEJ2，YDEJ2系列</h3>
+            </div>
+        </div>
+    </div>
+    
+    <div class="page-header">
+        <h1>YCT系列电磁调速电动机</h1>
+    </div>
+
+    <div class="variant-carousel">
+        <div class="variant-card">
+            <div class="img-box"><img src="9-YCT系列电磁调速电动机1.png" alt=""></div>
+            <div class="info-box">
+                <h3>YCT系列</h3>
+            </div>
+        </div>
+
+        <div class="variant-card">
+            <div class="img-box"><img src="9-YCT系列电磁调速电动机 2.png" alt=""></div>
+            <div class="info-box">
+                <h3>YCT系列</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-header">
+        <h1>YLV系列低压大功率三相异步电动机</h1>
+    </div>
+
+    <div class="variant-carousel">
+        <div class="variant-card">
+            <div class="img-box"><img src="10-YLV系列低压大功率三相异步电动机1.jpg" alt=""></div>
+            <div class="info-box">
+                <h3>YLV系列</h3>
+            </div>
+        </div>
+
+        <div class="variant-card">
+            <div class="img-box"><img src="10-YLV系列低压大功率三相异步电动机2.jpg" alt=""></div>
+            <div class="info-box">
+                <h3>YLV系列</h3>
+            </div>
+        </div>
+
+        <div class="variant-card">
+            <div class="img-box"><img src="10-YLV系列低压大功率三相异步电动机3.jpg" alt=""></div>
+            <div class="info-box">
+                <h3>YLV系列</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-header">
+        <h1>YVPKK系列高压变频三相异步电动机</h1>
+    </div>
+
+    <div class="variant-carousel">
+        <div class="variant-card">
+            <div class="img-box"><img src="14-YVPKK系列高压变频三相异步电动机1.png" alt=""></div>
+            <div class="info-box">
+                <h3>YVPKK系列</h3>
+            </div>
+        </div>
+
+        <div class="variant-card">
+            <div class="img-box"><img src="14-YVPKK系列高压变频三相异步电动机2.png" alt=""></div>
+            <div class="info-box">
+                <h3>YVPKK系列</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-header">
+        <h1>YBX3系列高效率隔爆型三相异步电动机</h1>
+    </div>
+
+    <div class="variant-carousel">
+        <div class="variant-card">
+            <div class="img-box"><img src="19-YBX3系列高效率隔爆型三相异步电动机1.jpg" alt=""></div>
+            <div class="info-box">
+                <h3>YBX3系列</h3>
+            </div>
+        </div>
+
+        <div class="variant-card">
+            <div class="img-box"><img src="19-YBX3系列高效率隔爆型三相异步电动机2.jpg" alt=""></div>
+            <div class="info-box">
+                <h3>YBX3系列</h3>
+            </div>
+        </div>
+
+        <div class="variant-card">
+            <div class="img-box"><img src="19-YBX3系列高效率隔爆型三相异步电动机3.jpg" alt=""></div>
+            <div class="info-box">
+                <h3>YBX3系列</h3>
+            </div>
+        </div>
+
+        <div class="variant-card">
+            <div class="img-box"><img src="19-YBX3系列高效率隔爆型三相异步电动机4.jpg" alt=""></div>
+            <div class="info-box">
+                <h3>YBX3系列</h3>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
